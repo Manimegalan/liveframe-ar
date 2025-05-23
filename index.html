@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700%3B900&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>LiveFrame AR</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+    <style>
+        body {
+            min-height: 100vh;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#111418]">
+    <div class="relative flex size-full min-h-screen flex-col dark justify-between group/design-root overflow-x-hidden"
+        style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+        <div>
+            <div class="relative">
+                <div class="h-[300px] @[375px]:h-[350px] @[480px]:h-[400px] @[640px]:h-[500px] @[864px]:h-[600px] bg-center bg-no-repeat bg-cover relative"
+                    style="background-attachment: cover; background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBl_XOt6VrAYXsSei5Y8U8FO06jf_GI_918JcRo0kLlbpEN5umk3ZutF-cX84EuliiasX5NGj4Bzf1uJahhb15QojBg1pB2OTzUkLcMSIcIvfltYiOJv6vRWnNnVhXCC0kY__kVC6Fl7D6Al3SRzDcdSA_6IubY9kI2otgST1mas123KVtQJihnLdePyVwOXepAYxwOrR2WdzzRP3KAxOPAKDgUb5Y9cyy_gbxxW5spvGjo3q3u2cINrLNW8QBAU8vtzMxUy0-gg2Qn');">
+                    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#111418] to-transparent"></div>
+                </div>
+                <div class="px-4 @[480px]:px-6 @[864px]:px-10">
+                    <div class="flex flex-col items-center justify-end gap-8 px-4 py-12 @[480px]:py-20">
+                        <div class="flex flex-col gap-3 text-center">
+                            <h1
+                                class="text-white text-4xl font-bold leading-tight tracking-[-0.033em] @[480px]:text-4xl max-w-[720px]">
+                                Bring Your Memories to Life with AR Photo Scanning
+                            </h1>
+                            <p
+                                class="text-slate-300 text-base font-normal leading-relaxed max-w-[720px] @[480px]:text-lg">
+                                Experience the magic of augmented reality with our innovative app. Scan your photos
+                                and overlay videos to relive your cherished moments in a whole new way.
+                            </p>
+                        </div>
+                        <button id="start-ar"
+                            class="flex min-w-[84px] w-full @[480px]:w-auto items-center justify-center gap-2 overflow-hidden rounded-xl h-14 px-6 bg-[#3d98f4] text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-[#2c83e0] active:bg-[#226eb7] touch-target"
+                            style="min-height: 3.5rem;">
+                            <span class="material-symbols-outlined">view_in_ar</span>
+                            <span class="truncate">Start AR</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-[#111418] py-6 px-4 @[480px]:px-6 @[864px]:px-10">
+            <div
+                class="flex flex-col items-center gap-2 text-center text-sm text-slate-400 @[480px]:flex-row @[480px]:justify-between">
+                <p>© 2025 LiveFrame. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const startArButton = document.getElementById('start-ar');
+        startArButton.addEventListener('click', () => {
+            window.location.href = 'mindar.html';
+        });
+    </script>
+</body>
+
+</html>
